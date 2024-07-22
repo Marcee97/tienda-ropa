@@ -1,0 +1,112 @@
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.section-home{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 12em 3em 1em 1em;
+height: 140vh;
+
+}
+
+.seccion-palabras-mov {
+  overflow: hidden;
+  margin: 5px;
+  width: 280%;
+  height: 80vh;
+}
+
+.contenedor-palabras-mov {
+  animation: scrollUp 490s linear infinite;
+  color: #757575;
+  font-size: 2.8em;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  p{
+    
+   word-spacing: -0.3em;
+   letter-spacing: -0.5em,;
+line-height: 1em;
+  }
+}
+
+
+.parrafo-presentacion{
+  margin-left: auto;
+  width: 50%;
+  padding: .5em;
+  font-weight: bold;
+  font-size: 1.8em;
+  font-family: sans-serif;
+  line-height: 1.1em;
+  
+
+}
+
+
+.section-segunda{
+  background-color: #231d30;
+  color: #fff;
+  font-family: sans-serif;
+  height: 350vh;
+  position: relative;
+ 
+}
+
+.cont-img{
+  position: sticky;
+  top: 0;
+  width: 33%;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 4em 0 0 0 ;
+
+
+}
+
+.div-img-1{
+  width: 40%;
+}
+
+.div-img-2{
+  width: 30%;
+}
+.img-1{
+  width: 100%;
+  height: 85vh;
+}
+
+
+.img-2{
+  width: 100%;
+  height: 58vh;
+  margin-top: 9em;
+  object-fit: cover;
+
+}
+
+.blur{
+  outline: 1px solid red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backdrop-filter: blur(5px);
+
+}
+
+.section-tercer{
+  z-index: 45;
+  outline: 1px solid rgb(0, 0, 0);
+  padding: 1.3em;
+  position: relative;
+  height: 80vh;
+
+}

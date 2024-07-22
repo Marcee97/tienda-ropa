@@ -1,0 +1,29 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  bottom: 2px;
+  color: #174525;
+  width: 100%;
+  font-weight: 700;
+  font-family: monospace;
+  font-size: 2em;
+  padding: 5px;
+}
+
+.contenedor-navbar {
+}
+
+.ul-nav {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  padding: 0 1em;
+  justify-content: end;
+  gap: 9em;
+  transition: .7s all ease;
+}
+
+.animate-nav {
+  gap: 7.5em;
+  transition: .7s all ease;
+}
