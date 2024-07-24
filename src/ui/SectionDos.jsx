@@ -4,10 +4,12 @@ import "../styles/sectiondos.css";
 export const SectionDos = () => {
   const elementoDos = useRef(null);
   const elementoImg = useRef(null);
+  const elementoText = useRef(null);
 
   useEffect(() => {
     const ubicacion = 1556;
-    const ubicacionImg = 1812;
+    const ubicacionImg = 1813;
+    const ubicacionText = 1000;
 
     const funScrollUp = () => {
       const scrollUp = window.scrollY;
@@ -16,7 +18,6 @@ export const SectionDos = () => {
         const indexUp = Math.floor((scrollUp - ubicacion) / 5.526);
         const numeroFinal = Math.min(100, indexUp);
 
-
         elementoDos.current.style.transform = `translateY(-${numeroFinal}%)`;
       } else if (scrollUp < ubicacion) {
         if (elementoDos.current) {
@@ -24,18 +25,26 @@ export const SectionDos = () => {
         }
       }
 
-      if(scrollUp >= ubicacionImg){
-        const indexImg = Math.floor((scrollUp - ubicacionImg) / 3)
-        console.log(indexImg, 'Mov Igm')
+      if (scrollUp >= ubicacionImg) {
+        const indexImg = Math.floor((scrollUp - ubicacionImg) / 2.98);
+        console.log(indexImg, "Mov Igm");
 
-        const indexImgFinal = Math.min(100, indexImg)
-        elementoImg.current.style.transform = `translateY(-${indexImgFinal}%)`
-      }else if(scrollUp < ubicacionImg){
-        elementoImg.current.style.transform = 'translateY(0)'
+        const indexImgFinal = Math.min(100, indexImg);
+        elementoImg.current.style.transform = `translateY(-${indexImgFinal}%)`;
+      } else if (scrollUp < ubicacionImg) {
+        elementoImg.current.style.transform = "translateY(0)";
+      }
+
+      if (scrollUp >= ubicacionText) {
+        const indexText = Math.floor((scrollUp - ubicacionText) / 2);
+
+        const indexTextFinal = Math.min(580, indexText);
+
+        elementoText.current.style.fontSize = `${indexTextFinal}%`;
+      } else if (scrollUp < ubicacionText) {
+        elementoText.current.style.fontSize = "0";
       }
     };
-
-  
 
     window.addEventListener("scroll", funScrollUp);
     return () => {
@@ -46,16 +55,22 @@ export const SectionDos = () => {
   return (
     <section className="section-segunda">
       <div className="cont-img">
+        <article className="cont-img-article">
+          <div className="div-img-0">
+            <img
+              src="https://i.pinimg.com/564x/2b/b5/21/2bb521d4cc9d3a59ac6a3b1bfe210a1a.jpg"
+              alt="imagen estatica"
+              className="img-0"
+            />
 
-
-        <div className="div-img-0">
-      <img src="https://i.pinimg.com/564x/2b/b5/21/2bb521d4cc9d3a59ac6a3b1bfe210a1a.jpg" alt="imagen estatica" className="img-0" />
-
-      <img src="https://i.pinimg.com/564x/b0/ab/17/b0ab17f34ab317cf6d094301ba1696c1.jpg" alt="imagen scroll" className="img-0-scroll" ref={elementoImg} />
-        </div>
-
-
-
+            <img
+              src="https://i.pinimg.com/564x/b0/ab/17/b0ab17f34ab317cf6d094301ba1696c1.jpg"
+              alt="imagen scroll"
+              className="img-0-scroll"
+              ref={elementoImg}
+            />
+          </div>
+        </article>
 
         <div className="div-img-1">
           <img
@@ -68,20 +83,21 @@ export const SectionDos = () => {
         </div>
       </div>
 
-      <div className="cont-moving" >
+      <div className="cont-moving">
         <article className="titulo-y-texto">
-          <h3 className="cont-moving-text">About..</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-            dicta. Quos, error, consequuntur nostrum cum ea quam modi dolorem
-            laboriosam, asperiores quasi dolore nulla minus inventore amet sit
-            placeat accusantium. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Fugit veritatis ullam, a enim tempore unde maxime,
-            accusantium in, atque necessitatibus dolorem ea perferendis ratione!
-            Voluptates maiores praesentium repellat ipsam natus.
+          <h3 className="cont-moving-text" ref={elementoText}>
+            Woman
+          </h3>
+
+          <p className="cont-moving-parrafo-woman">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+            exercitationem enim quis perspiciatis suscipit aliquam voluptatibus
+            commodi quia nihil fugit tempore id saepe quod reiciendis laborum
+            unde, odit aliquid provident.
           </p>
         </article>
       </div>
+     
     </section>
   );
 };
