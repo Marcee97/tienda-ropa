@@ -1,44 +1,8 @@
 import "../styles/home.css";
 import { useRef, useEffect, useState, useMemo } from "react";
+import { SectionDos } from "../ui/SectionDos";
 
 export const Home = () => {
-  const lista = useRef(null);
-  /*
-  const [indexLista, setIndexLista] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndexLista((prevLista) => {
-        const newValor = prevLista + 1;
-        if (lista.current && lista.current.children[prevLista]) {
-          const colorPrevio = lista.current.children[prevLista];
-          colorPrevio.style.color = "black";
-          colorPrevio.style.transform = "scale(1)";
-          colorPrevio.style.transition = "1s all ease";
-        }
-
-        if (lista.current && lista.current.children[newValor]) {
-          const colorActual = lista.current.children[newValor];
-          colorActual.style.transform = "scale(1.3)";
-          colorActual.style.transition = "1s all ease";
-        }
-        if (newValor >= lista.current.children.length) {
-          setIndexLista(0);
-        }
-        if(lista.current){
-          const moving = lista.current;
-          moving.style.transform = 'translateY(-100%)'
-          moving.style.transition = '85s all ease'
-        }
-
-       
-        return newValor;
-      });
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-*/
-
   const elemento = useRef(null);
   const [contador, setContador] = useState(3);
 
@@ -87,7 +51,6 @@ export const Home = () => {
   const repeatTimes = 25;
 
   const palabrasRepetidas = useMemo(() => {
-    console.log("prueba de render");
     return Array(repeatTimes).fill(palabras).flat();
   }, []);
 
@@ -101,7 +64,7 @@ export const Home = () => {
             ))}
           </div>
         </div>
-        <div className="seccion-text">
+        <div className="section-text">
           <p className="parrafo-presentacion">
             Bienvenidos a WE., donde la moda se encuentra con la elegancia y el
             estilo moderno. Nuestra tienda ofrece una selección exquisita de
@@ -114,30 +77,7 @@ export const Home = () => {
           </p>
         </div>
       </section>
-      <section className="section-segunda">
-        <div className="cont-img">
-          <div className="div-img-1">
-
-          <img
-            src="https://images.pexels.com/photos/22742253/pexels-photo-22742253/free-photo-of-aluxana.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="img-estilo" className="img-1"
-            />
-            </div>
-            <div className="div-img-2">
-
-          <img
-            src="https://images.pexels.com/photos/3611652/pexels-photo-3611652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Foto-img" className="img-2"
-            />
-            </div>
-        
-        </div>
-        
-
-        <div className="section-tercer">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis natus, quod reprehenderit est vitae eius asperiores doloribus, ducimus fugiat enim earum ullam magni nemo! Assumenda earum iusto dolorem magnam.</p>
-        </div>
-      </section>
+      <SectionDos />
     </>
   );
 };

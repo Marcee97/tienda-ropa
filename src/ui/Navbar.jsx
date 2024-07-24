@@ -14,7 +14,6 @@ useEffect(()=> {
 const scrolly = window.scrollY
 if(scrolly > 490){
   setAnimate(true)
-  console.log('messinav')
 }else{
   setAnimate(false)
 }
