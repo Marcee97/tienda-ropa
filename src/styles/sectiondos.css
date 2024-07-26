@@ -1,5 +1,5 @@
 .section-segunda {
-  background-color: #231d30;
+  background-color: #d0f3f5;
   color: #fff;
   font-family: sans-serif;
   position: relative;
@@ -11,19 +11,18 @@
   width: 33%;
   display: flex;
   width: 100%;
-  justify-content: space-around;
-  padding: 4em 1em 3em 1em;
+  padding: 4em 7em 3em 7em;
   overflow: hidden;
   z-index: 3;
 }
 
-.cont-img-article{
+.cont-img-article {
   width: 25%;
   position: relative;
+  margin-top: 1em;
 }
 
-.cont-img-article-h4{
-  
+.cont-img-article-h4 {
   text-align: center;
   position: absolute;
   top: 85%;
@@ -31,7 +30,6 @@
   transform: translate(-50%, -50%);
   font-family: monospace;
   font-weight: bold;
-
 }
 
 .div-img-0 {
@@ -41,95 +39,82 @@
   overflow: hidden;
 }
 
-.img-0-scroll {
+.img-0{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cont-img-0-scroll {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.img-0 {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-
-.div-img-2 {
-  width: min-content;
-  position: relative;
-
-  height: min-content;
-  margin-top: 0.5em;
   overflow: hidden;
-  z-index: 5;
+  
 }
 
-.img-2 {
-  width: 400px;
-  height: 350px;
+.img-0-scroll {
+ width: 400px;
+ height: 350px;
   object-fit: cover;
 }
 
-.parrafo-sobre-imagen-dos {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff46;
-  backdrop-filter: blur(25px);
-}
+
+
+
 
 .div-img-1 {
   width: min-content;
-  height: 85vh;
+  height: 80vh;
   position: relative;
   overflow: hidden;
   margin-left: auto;
+  margin-top: 1em;
 }
 
 .img-1 {
   object-fit: contain;
 }
 
-.text-desplazado-imagen {
+.cont-texto-deplazado-img {
+  position: absolute;
+  background-color: #ffffff54;
+  backdrop-filter: blur(9px);
   width: 100%;
   height: 100%;
-  background-color: #ffffff93;
-  backdrop-filter: blur(9px);
-  position: absolute;
+  z-index: 45;
   top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.text-desplazado-img {
+  color: rgb(78, 68, 68);
+  font-size: 9em;
+  margin-top: 150px;
+  margin-left: 160px;
 }
 
 .cont-moving {
   width: 100%;
   height: 110vh;
-  background-color: #c6a779;
+  background-color: #406a6d;
   position: sticky;
   top: 0;
   z-index: 2;
-  
 }
-
 
 .titulo-y-texto {
   position: sticky;
-  top: 34em;
-  color: #182018;
+  top: 29em;
+  color: #ffffff;
   width: 40%;
-  padding: 0 0 0 .7em;
+  padding: 0 0 0 5.5em;
+  font-size: 1em;
 }
 
-.cont-moving-parrafo-woman{
-  font-size: 1.1em;
+.cont-moving-parrafo-woman {
+  font-size: .8em;
   margin-top: 2em;
-  
-}
-
-.section-shop{
-  width: 100%;
-  height: 45vh;
-  background-color: aquamarine;
 }
