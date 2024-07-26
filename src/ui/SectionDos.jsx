@@ -17,7 +17,6 @@ export const SectionDos = () => {
       if (scrollUp >= ubicacion) {
         const indexUp = Math.floor((scrollUp - ubicacion) / 5.43);
         const numeroFinal = Math.max(0, 100 - indexUp);
-        console.log(numeroFinal, "indexheigth");
         elementoDos.current.style.height = `${numeroFinal}%`;
       } else if (scrollUp < ubicacion) {
         if (elementoDos.current) {

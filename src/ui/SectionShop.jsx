@@ -1,48 +1,56 @@
 import "../styles/sectionshop.css";
+import { data } from "../data/product.js";
 import { useEffect, useRef } from "react";
 
 export const SectionShop = () => {
-  const productoRef = useRef(null);
-  const hoverProductoRef = useRef(null);
+  const productosRef = useRef([]);
+  const hoverProductoRef = useRef([])
+
   useEffect(() => {
-    const productoCurrentRef = productoRef.current;
-    const hoverProductoCurrentRef = hoverProductoRef.current;
 
-    const mouseEnter = () => {
-      hoverProductoCurrentRef.style.visibility = "visible";
-    };
-    const mouseLeave = () => {
-      hoverProductoCurrentRef.style.visibility = "hidden";
-
+    const mouseEnter = (index) => {
+      const currentHover = hoverProductoRef.current[index];
+      currentHover.style.color = 'green'
     };
 
-    productoCurrentRef.addEventListener("mouseenter", mouseEnter);
-    productoCurrentRef.addEventListener("mouseleave", mouseLeave);
+    const mouseLeave = (index) => {
+      const currentHover = hoverProductoRef.current[index];
+      currentHover.style.color = 'blue'
+    };
+
+    productosRef.current.forEach((refs, index) => {
+      refs.addEventListener("mouseenter", () => mouseEnter(index));
+      refs.addEventListener("mouseleave", () => mouseLeave(index));
+    });
 
     return () => {
-      productoCurrentRef.removeEventListener("mouseenter", mouseEnter);
-      productoCurrentRef.removeEventListener("mouseleave", mouseLeave);
+      productosRef.current.forEach((refs, index) => {
+        if (refs) {
+          refs.removeEventListener("mouseenter", ()=> mouseEnter(index));
+          refs.removeEventListener("mouseleave", ()=> mouseLeave(index));
+        }
+      });
     };
   }, []);
 
   return (
     <section className="section-shop">
-      <div className="contenedor-productos">
+      <div className="contenedor-de-productos__shop">
         <h4 className="cont-ropa-titulo">Section Ropa</h4>
-
-        <div className="contenedor-img">
-          <div className="div-producto" ref={productoRef}>
-            <img
-              src="/img/imgproducto(1).png"
-              alt="foto producto"
-              className="img-producto-shop"
-            />
-            <article className="article-producto" ref={hoverProductoRef}>
-              <h5 className="info-producto">Remera Estilo Run Park</h5>
-              <p></p>
-              <strong className="precio-producto">$2.900</strong>
-            </article>
-          </div>
+        <div className="contenedor-de-productos">
+          {data.map((item, index) => (
+            <div
+              key={index}
+              ref={el => (productosRef.current[index] = el)}
+              className="card-producto"
+            >
+              <img src={item.img} alt="Foto Producto" />
+              <article className="info-producto-hover" ref={oh => hoverProductoRef.current[index] = oh}>
+                <p>{item.modelo}</p>
+                <strong>{item.precio}</strong>
+              </article>
+            </div>
+          ))}
         </div>
       </div>
     </section>

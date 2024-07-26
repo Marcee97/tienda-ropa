@@ -19,7 +19,6 @@ useEffect(()=> {
   const scrollY = window.scrollY;
 
 if(scrollY > 490){
-  console.log('scrollmayor')
   setScale(true)
 }else{
   setScale(false)
