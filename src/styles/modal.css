@@ -1,0 +1,68 @@
+
+.section-modal{
+    position: fixed;
+   
+    background-color: rgb(206, 186, 186);
+    top: 0;
+    z-index: 55;
+    font-family: sans-serif;
+cursor: default;
+    
+}
+.button-cerrar-modal{
+    margin-bottom: auto;
+    font-size: 3em;
+    cursor: pointer;
+
+}
+
+.modal{
+    background-color: rgb(206, 186, 186);
+    width: 88em;
+    height: 100vh;
+    padding: 9em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.contenedor-info-producto-modal{
+    width: 35%;
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+}
+
+.info-producto-modal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.2em;
+
+
+}
+
+.talles-modal{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    font-size: .9em;
+
+}
+
+.talles{
+    outline: 1px solid rgb(83, 83, 83);
+    padding: .9em;
+    font-size: 1.2em;
+    cursor: pointer;
+
+}
+
+.talles:hover{
+    background-color: rgb(236, 233, 229);
+}

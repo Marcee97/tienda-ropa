@@ -4,12 +4,10 @@ import "../styles/sectiondos.css";
 export const SectionDos = () => {
   const elementoDos = useRef(null);
   const elementoImg = useRef(null);
-  const elementoText = useRef(null);
 
   useEffect(() => {
     const ubicacion = 1548;
     const ubicacionImg = 1784;
-    const ubicacionText = 1000;
 
     const funScrollUp = () => {
       const scrollUp = window.scrollY;
@@ -33,15 +31,7 @@ export const SectionDos = () => {
         elementoImg.current.style.height = "100%";
       }
 
-      if (scrollUp >= ubicacionText) {
-        const indexText = Math.floor((scrollUp - ubicacionText) / 2);
-
-        const indexTextFinal = Math.min(580, indexText);
-
-        elementoText.current.style.fontSize = `${indexTextFinal}%`;
-      } else if (scrollUp < ubicacionText) {
-        elementoText.current.style.fontSize = "0";
-      }
+     
     };
 
     window.addEventListener("scroll", funScrollUp);
@@ -84,9 +74,7 @@ export const SectionDos = () => {
 
       <div className="cont-moving">
         <article className="titulo-y-texto">
-          <h3 className="cont-moving-text" ref={elementoText}>
-            Remeras
-          </h3>
+          
         </article>
       </div>
     </section>

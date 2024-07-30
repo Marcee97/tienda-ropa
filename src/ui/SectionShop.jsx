@@ -2,20 +2,23 @@ import "../styles/sectionshop.css";
 import { data } from "../data/product.js";
 import { useEffect, useRef } from "react";
 
-export const SectionShop = () => {
+export const SectionShop = ({infoModal}) => {
   const productosRef = useRef([]);
   const hoverProductoRef = useRef([])
+const fondoText = useRef(null)
+const sectionShopScroll = 2900
+
 
   useEffect(() => {
 
     const mouseEnter = (index) => {
       const currentHover = hoverProductoRef.current[index];
-      currentHover.style.color = 'green'
+      currentHover.style.visibility = 'hidden'
+     
     };
 
     const mouseLeave = (index) => {
       const currentHover = hoverProductoRef.current[index];
-      currentHover.style.color = 'blue'
     };
 
     productosRef.current.forEach((refs, index) => {
@@ -33,21 +36,47 @@ export const SectionShop = () => {
     };
   }, []);
 
+  useEffect(()=>{
+const scrolling = ()=> {
+  const elementoCurrentText = fondoText.current;
+  const scrollViewport = window.scrollY;
+
+  if(scrollViewport >= sectionShopScroll){
+
+    
+    const scrollCalc = Math.floor(scrollViewport / 7)
+  
+  const scrollFinal = Math.min(1300, scrollCalc)
+
+console.log(scrollFinal, 'scrollFinal')
+elementoCurrentText.style.transform = `translateX(${scrollFinal})%`
+} 
+
+  }
+
+  window.addEventListener('scroll', scrolling)
+
+  return ()=> {
+    window.removeEventListener('scroll', scrolling)
+  }
+
+  }, [])
   return (
     <section className="section-shop">
+    <h3 className="titulo-shop-remeras animate-shop" ref={fondoText}>RemerasRemerasRemerasRemerasRemerasRemerasRemerasRemerasRemerass</h3>
       <div className="contenedor-de-productos__shop">
-        <h4 className="cont-ropa-titulo">Section Ropa</h4>
-        <div className="contenedor-de-productos">
+        <div className="contenedor-de-productos__cards">
           {data.map((item, index) => (
             <div
+            onClick={()=> infoModal(item)}
               key={index}
               ref={el => (productosRef.current[index] = el)}
               className="card-producto"
             >
-              <img src={item.img} alt="Foto Producto" />
+              <img src={item.img} alt="Foto Producto" className="img-producto-shop" />
               <article className="info-producto-hover" ref={oh => hoverProductoRef.current[index] = oh}>
-                <p>{item.modelo}</p>
-                <strong>{item.precio}</strong>
+               
+               
               </article>
             </div>
           ))}
