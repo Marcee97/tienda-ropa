@@ -105,16 +105,11 @@
   z-index: 2;
 }
 
-.titulo-y-texto {
-  position: sticky;
-  top: 29em;
-  color: #ffffff;
-  width: 40%;
-  padding: 0 0 0 5.5em;
-  font-size: 1em;
-}
+.titulo-articulo-siguiente{
+font-size: 4em;
+position: sticky;
+top: 8.8em;
+margin-left: 1.5em;
+margin-bottom: .5em;
 
-.cont-moving-parrafo-woman {
-  font-size: .8em;
-  margin-top: 2em;
 }

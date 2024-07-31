@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import "../styles/sectiondos.css";
 
-export const SectionDos = () => {
+
+export const SectionDos = ({ images }) => {
   const elementoDos = useRef(null);
   const elementoImg = useRef(null);
 
@@ -30,8 +31,6 @@ export const SectionDos = () => {
       } else if (scrollUp < ubicacionImg) {
         elementoImg.current.style.height = "100%";
       }
-
-     
     };
 
     window.addEventListener("scroll", funScrollUp);
@@ -42,40 +41,41 @@ export const SectionDos = () => {
 
   return (
     <section className="section-segunda">
-      <div className="cont-img">
+      {images && images.map((img, index) => (
+        
+        <div className="cont-img" key={index}>
         <article className="cont-img-article">
           <div className="div-img-0">
             <img
-              src="https://i.pinimg.com/564x/33/69/8b/33698b65b6f94d7fc2f35b56b38b1c1b.jpg"
-              alt="imagen estatica"
-              className="img-0"
-            />
+              src={img.imgX}
+            alt="imagen estatica"
+          className="img-0"
+        />
             <div className="cont-img-0-scroll" ref={elementoImg}>
               <img
-                src="https://i.pinimg.com/564x/d5/9c/13/d59c135860dcdd78edb8fd9c152cf694.jpg"
-                alt="imagen scroll"
-                className="img-0-scroll"
-              />
+                src={img.imgXScroll}
+              alt="imagen scroll"
+            className="img-0-scroll"
+          />
             </div>
           </div>
         </article>
 
         <div className="div-img-1">
           <img
-            src="https://i.pinimg.com/564x/99/60/bc/9960bc2649da9884965ad4c77e1589b4.jpg"
-            alt="Foto-muestra"
-            className="img-1"
-          />
+            src={img.imgXl}
+          alt="Foto-muestra"
+        className="img-1"
+      />
           <div className="cont-texto-deplazado-img" ref={elementoDos}>
             <p className="text-desplazado-img">We..</p>
           </div>
         </div>
       </div>
+      ))}
 
       <div className="cont-moving">
-        <article className="titulo-y-texto">
-          
-        </article>
+        <h5 className="titulo-articulo-siguiente">Remeras</h5>
       </div>
     </section>
   );

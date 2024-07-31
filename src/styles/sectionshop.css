@@ -2,14 +2,38 @@
   background-color: #93862c;
   padding: 7em 5em;
   position: relative;
+  overflow: hidden;
 }
 
 .titulo-shop-remeras {
-  color: #b3b620;
+  color: #ffffff;
   font-family: sans-serif;
   z-index: 0;
-  position: sticky;
-  top: 0.3em;
+  top: 37em;
+  left: -52em;
+  position: absolute;
+  font-size: 3em;
+  rotate: 73deg;
+  background-color: #000;
+  word-wrap: break-word;
+  display: inline-block;
+  box-shadow: 0px 0px 45px 35px #000;
+
+}
+
+
+.titulo-shop-remeras-left {
+  color: #fff;
+  background-color: #000;
+  word-wrap: break-word;
+  display: inline-block;
+  rotate: -73deg;
+  top: 112em;
+  position: absolute;
+  font-size: 3em;
+  left: -127em;
+  font-family: sans-serif;
+  box-shadow: 0px 0px 45px 35px #000;
 }
 
 .contenedor-de-productos__cards {
@@ -27,12 +51,10 @@
 
 .img-producto-shop {
   width: 400px;
-
 }
 
 .img-producto-shop:hover {
   opacity: 0.7;
-
 }
 
 .info-producto-hover {

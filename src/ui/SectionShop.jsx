@@ -6,6 +6,8 @@ export const SectionShop = ({infoModal}) => {
   const productosRef = useRef([]);
   const hoverProductoRef = useRef([])
 const fondoText = useRef(null)
+
+const fondoTextXl = useRef(null)
 const sectionShopScroll = 2900
 
 
@@ -39,18 +41,24 @@ const sectionShopScroll = 2900
   useEffect(()=>{
 const scrolling = ()=> {
   const elementoCurrentText = fondoText.current;
+  const elementoCurrentTextXl = fondoTextXl.current;
   const scrollViewport = window.scrollY;
 
   if(scrollViewport >= sectionShopScroll){
 
     
-    const scrollCalc = Math.floor(scrollViewport / 7)
+    const scrollCalc = Math.floor((scrollViewport - sectionShopScroll) / 30)
+    const scrollCalcXl = Math.floor((scrollViewport - sectionShopScroll) / 30)
   
-  const scrollFinal = Math.min(1300, scrollCalc)
+  const scrollFinal = Math.min(1500, scrollCalc)
+  const scrollFinalXl = Math.min(1500, scrollCalcXl)
 
 console.log(scrollFinal, 'scrollFinal')
-elementoCurrentText.style.transform = `translateX(${scrollFinal})%`
+elementoCurrentText.style.transform = `translateX(-${scrollFinal}%)`
+elementoCurrentTextXl.style.transform = `translateX(${scrollFinalXl}%)`
 } 
+
+
 
   }
 
@@ -63,7 +71,11 @@ elementoCurrentText.style.transform = `translateX(${scrollFinal})%`
   }, [])
   return (
     <section className="section-shop">
-    <h3 className="titulo-shop-remeras animate-shop" ref={fondoText}>RemerasRemerasRemerasRemerasRemerasRemerasRemerasRemerasRemerass</h3>
+    <p className="titulo-shop-remeras" ref={fondoText}>Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.</p>
+    <p className="titulo-shop-remeras-left" ref={fondoTextXl}>Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.Remeras.</p>
+
+    
+    <h4 className="text-animate-background" ></h4>
       <div className="contenedor-de-productos__shop">
         <div className="contenedor-de-productos__cards">
           {data.map((item, index) => (

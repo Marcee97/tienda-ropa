@@ -77,7 +77,6 @@ export const Home = () => {
           </p>
         </div>
       </section>
-      <SectionDos />
     </>
   );
 };

@@ -9,9 +9,7 @@
   font-size: 2em;
   padding: 5px;
   z-index: 70;
-}
-
-.contenedor-navbar {
+  cursor: pointer;
 }
 
 .ul-nav {
