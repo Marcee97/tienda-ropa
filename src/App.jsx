@@ -2,12 +2,12 @@ import './App.css'
 import { Navbar } from "./ui/Navbar";
 import { Portada } from "./pages/Portada";
 import { Home } from './pages/Home';
-import { SectionShop } from './ui/SectionShop';
 import { Modal } from './ui/Modal';
-import { useEffect, useState } from 'react';
-import { SectionDos } from './ui/SectionDos';
+import {  useState } from 'react';
 import { imagesHeroRemeras } from "./data/heroRemeras.js";
 import { heroBuzos } from "./data/heroBuzos.js";
+import { Hero } from './ui/Hero.jsx';
+import { Shop } from "./ui/Shop.jsx";
 
 export const App = () => {
   
@@ -24,10 +24,10 @@ const addElement = (items) => {
       <Portada />
     <Navbar/>
     <Home/>
-    <SectionDos images={imagesHeroRemeras}/>
     <Modal infoRecibida={infos}/>
-    <SectionShop infoModal={addElement}/>
-    <SectionDos images={heroBuzos}/>
+    <Hero images={heroBuzos}/>
+    <Shop/>
+<Hero images={imagesHeroRemeras}/>
     </>
   );
 };
