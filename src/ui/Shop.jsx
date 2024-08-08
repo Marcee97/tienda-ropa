@@ -1,25 +1,25 @@
-import '../styles/shop.css'
+import "../styles/shop.css";
 
-
-
-
-
-
-
-export const Shop = () => {
+export const Shop = ({ shop, infoModal }) => {
   return (
     <section className="shop">
-            <div className="section-shop">
-<div className="cont-producto-card">
-    <img src="https://i.pinimg.com/564x/88/3b/1d/883b1d732cc778c7a0ee1cc1d2d4a4d7.jpg" alt="foto producto shop" className='img-card-shop' />
-    <article>
-<h5>Nombre</h5>
-<p>Descripcion del buzo</p>
-<strong>$$$</strong>
+      <div className="section-shop">
+      {shop && shop.map((item, index) => (
 
-    </article>
-</div>
-            </div>
+        <div className="cont-producto-card" key={index} onClick={()=> infoModal(item)}>
+          <img
+            src={item.img}
+          alt="foto producto shop"
+        className="img-card-shop"
+      />
+          <article className="info-products">
+            <h5>{item.nombre}</h5>
+            <p className="info-detalle">{item.detalle}</p>
+            <strong className="info-precio">{item.precio}</strong>
+          </article>
+        </div>
+      ))}
+      </div>
     </section>
-  )
-}
+  );
+};

@@ -1,16 +1,48 @@
-.shop{}
+.shop{
+    padding: 5em 1em 5em 1em;
+    font-family: sans-serif;
+    background-color: rgb(20, 20, 20);
+    color: #fff;
+
+}
 
 .section-shop{
     display: grid;
-    
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
 }
-
 
 
 .cont-producto-card{
-    outline: 1px solid green;
+    max-width: 380px;
+    max-height: 730px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .img-card-shop{
-    outline: 1px solid red;
-    width: 50%;
+    width: 100%;
+    transition: .5s all ease;
+}
+
+.img-card-shop:hover{
+opacity: .7;
+}
+
+.info-products{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    font-size: 1.4em;
+    padding: 0 0 0 2.8em;
+    border-left:1px solid #000 ;
+
+}
+.info-detalle{
+
+}
+
+.info-precio{
+    font-size: 1.8em;
 }

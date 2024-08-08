@@ -21,7 +21,8 @@ export const Modal = ({ infoRecibida }) => {
             <div className="contenedor-info-producto-modal">
 
             <article className="info-producto-modal">
-              <p>{items.modelo}</p>
+              <h5>{items.nombre}</h5>
+              <p>{items.detalle}</p>
               <strong>{items.precio}</strong>
             </article>
             <article className="talles-modal">
